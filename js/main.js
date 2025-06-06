@@ -210,3 +210,170 @@
         }
     });
     AOS.refresh();
+
+// AOS Initialization
+if (typeof AOS !== 'undefined') {
+    AOS.init();
+}
+
+// Modal Konsultasi Toggle
+const openModalButtons = document.querySelectorAll('#openConsultationModal, #openConsultationModalBottom');
+const consultationModal = document.getElementById('consultationModal');
+const closeModalButton = document.querySelector('.modal-close');
+
+if (openModalButtons.length > 0 && consultationModal) {
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            consultationModal.classList.add('active');
+        });
+    });
+}
+
+if (closeModalButton) {
+    closeModalButton.addEventListener('click', closeConsultationModal);
+}
+
+function closeConsultationModal() {
+    if (consultationModal) {
+        consultationModal.classList.remove('active');
+    }
+}
+
+function closeModal() {
+    closeConsultationModal();
+}
+
+// Form validation
+function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    // Validasi nama
+    if (!name || name.length < 2) {
+        alert('Nama harus diisi minimal 2 karakter!');
+        return false;
+    }
+
+    // Validasi email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+        alert('Email harus diisi dengan format yang benar!');
+        return false;
+    }
+
+    // Validasi phone
+    const phoneDigits = phone.replace(/[^0-9]/g, '');
+    if (!phone || phoneDigits.length < 10) {
+        alert('Nomor telepon harus diisi minimal 10 digit!');
+        return false;
+    }
+
+    // Tampilkan loading
+    const submitButton = document.querySelector('button[type="submit"]');
+    if (submitButton) {
+        submitButton.textContent = 'Mengirim...';
+        submitButton.disabled = true;
+    }
+
+    return true;
+}
+
+
+// Portfolio Filter Logic (jika ada)
+document.addEventListener('DOMContentLoaded', () => {
+    const mainFilterButtons = document.querySelectorAll('.main-filter-btn');
+    const subFilterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const subcategoryFilters = document.getElementById('subcategory-filters');
+    const websiteProjects = document.getElementById('website-projects');
+    const aplikasiProjects = document.getElementById('aplikasi-projects');
+
+    if (mainFilterButtons.length === 0) return; // Skip jika tidak ada filter
+
+    function filterProjects() {
+        const activeMainFilter = document.querySelector('.main-filter-btn.active')?.getAttribute('data-main-filter') || 'website';
+        const activeSubFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || 'all';
+
+        projectCards.forEach(card => {
+            card.classList.add('hidden');
+        });
+
+        projectCards.forEach(card => {
+            const cardMainCategory = card.dataset.mainCategory;
+            const cardCategory = card.dataset.category;
+
+            if (activeMainFilter === 'website' && cardMainCategory === 'website') {
+                if (activeSubFilter === 'all' || cardCategory === activeSubFilter) {
+                    card.classList.remove('hidden');
+                }
+            } else if (activeMainFilter === 'aplikasi' && cardMainCategory === 'aplikasi') {
+                card.classList.remove('hidden');
+            }
+        });
+
+        if (websiteProjects && aplikasiProjects && subcategoryFilters) {
+            if (activeMainFilter === 'website') {
+                websiteProjects.classList.remove('hidden');
+                aplikasiProjects.classList.add('hidden');
+                subcategoryFilters.classList.remove('hidden');
+            } else if (activeMainFilter === 'aplikasi') {
+                websiteProjects.classList.add('hidden');
+                aplikasiProjects.classList.remove('hidden');
+                subcategoryFilters.classList.add('hidden');
+            }
+        }
+    }
+
+    mainFilterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            mainFilterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            subFilterButtons.forEach(btn => btn.classList.remove('active'));
+            const allProjectBtn = document.querySelector('.filter-btn[data-filter="all"]');
+            if (allProjectBtn) allProjectBtn.classList.add('active');
+
+            filterProjects();
+        });
+    });
+
+    subFilterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            subFilterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            filterProjects();
+        });
+    });
+
+    filterProjects();
+});
+
+// Modal Image Viewer (jika ada)
+function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    if (modal && modalImage) {
+        modalImage.src = imageSrc;
+        modal.classList.remove('hidden');
+    }
+}
+
+const closeImageModal = document.getElementById('closeModal');
+if (closeImageModal) {
+    closeImageModal.addEventListener('click', () => {
+        const imageModal = document.getElementById('imageModal');
+        if (imageModal) {
+            imageModal.classList.add('hidden');
+        }
+    });
+}
+
+const imageModal = document.getElementById('imageModal');
+if (imageModal) {
+    imageModal.addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) {
+            e.currentTarget.classList.add('hidden');
+        }
+    });
+}

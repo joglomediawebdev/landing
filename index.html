@@ -11,21 +11,88 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="./css/home.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-   <style>
-
+<style>
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #024673;
+            transition: all 0.3s ease;
+        }
+        .nav-links {
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 120px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(5px);
+                padding: 20px;
+                gap: 20px;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+        }
+        /* Wave Pattern for Hero */
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 0;
+        }
+        /* Wave Pattern for Layanan Kami */
+        .layanan-wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            z-index: 0;
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body class="font-inter bg-gradient-to-b from-[#c9d6e3] to-[#e8ebf2] text-[#1a1a1a]">
     <div class="relative min-h-screen flex flex-col w-full">
         <!-- Header Section -->
-        <header class="navbar fixed top-0 w-full z-[1000] flex items-center py-4 h-[120px] backdrop-blur-sm px-8"
+       <header class="navbar fixed top-0 w-full z-[1000] flex items-center py-4 h-[120px] backdrop-blur-sm px-8"
             data-aos="fade-down" data-aos-duration="1000">
             <div class="flex items-center w-full max-w-7xl mx-auto">
                 <div class="logo flex items-start">
                     <img src="assets/images/logo-biru.png" alt="Joglo Media" class="h-[100px]" />
                 </div>
-                <div class="flex-1 flex justify-center">
-                    <nav class="nav-links flex items-center gap-10">
+                <div class="flex-1 flex justify-end lg:justify-center">
+                    <div class="hamburger lg:hidden" id="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <nav class="nav-links flex items-center gap-10 lg:flex">
                         <a href="#"
                             class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors active:font-bold">Beranda</a>
                         <a href="#"
@@ -49,7 +116,7 @@
         </header>
 
         <!-- Hero Section -->
-        <main
+       <main
             class="hero flex flex-col items-center pt-[150px] pb-10 px-8 lg:px-16 min-h-[calc(100vh-120px)] relative overflow-hidden w-full">
             <div class="flex flex-col lg:flex-row items-center justify-center max-w-7xl w-full gap-8">
                 <div class="hero-text max-w-[50%] text-base text-center lg:text-left" data-aos="fade-right"
@@ -68,8 +135,14 @@
                             Sekarang</button>
                     </div>
                 </div>
-                <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
-                    <img src="assets/images/banner-1.png" alt="Ilustrasi" class="w-[300px] h-[450px]" />
+                <!-- Wave Pattern Instead of Hero Image -->
+                <div class="hero-wave" data-aos="fade-left" data-aos-duration="1000">
+                    <svg viewBox="0 0 1440 150" preserveAspectRatio="none" class="w-full h-full">
+                        <path class="fill-[#0369a1] opacity-50"
+                            d="M0,50 C200,100 400,0 600,50 C800,100 1000,0 1200,50 C1400,100 1600,50 1440,50 L1440,150 L0,150 Z" />
+                        <path class="fill-[#024673] opacity-70"
+                            d="M0,80 C200,30 400,80 600,30 C800,80 1000,30 1200,80 C1400,30 1600,80 1440,80 L1440,150 L0,150 Z" />
+                    </svg>
                 </div>
             </div>
             <div class="batik-pattern-container">
@@ -188,62 +261,18 @@
                     </div>
                 </div>
 
-                <!-- Illustration -->
-                <div class="lg:w-1/3 flex justify-center lg:justify-end items-center relative" data-aos="fade-left"
+                <!-- Wave Pattern Instead of Illustration -->
+                <div class="layanan-wave lg:w-1/3 flex justify-center lg:justify-end items-center relative" data-aos="fade-left"
                     data-aos-duration="1000">
-                    <div class="relative w-full max-w-[500px] lg:max-w-[500px]">
-                        <!-- Background shape for better integration -->
-                        <div class="absolute inset-0 bg-[#0369a1]/10 rounded-full transform scale-150 -z-10"></div>
-                        <img src="assets/images/layanan-image.png" alt="Ilustrasi Karakter"
-                            class="w-full h-auto max-h-[500px] object-contain" />
-                        <!-- Badge dollar -->
-                        <div
-                            class="absolute top-[8%] right-[4%] bg-yellow-400 rounded-full p-2 lg:p-3 shadow-lg transform scale-75 lg:scale-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="1" x2="12" y2="23"></line>
-                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                            </svg>
-                        </div>
-                        <!-- Badge code -->
-                        <div
-                            class="absolute top-[35%] left-[4%] bg-blue-500 text-white rounded-full p-2 lg:p-3 shadow-lg transform scale-75 lg:scale-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-                        <!-- Badge support -->
-                        <div
-                            class="absolute bottom-[15%] right-[4%] bg-orange-500 text-white rounded-full p-2 lg:p-3 shadow-lg transform scale-75 lg:scale-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z">
-                                </path>
-                                <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path>
-                                <path
-                                    d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z">
-                                </path>
-                                <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"></path>
-                                <path
-                                    d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z">
-                                </path>
-                                <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"></path>
-                                <path
-                                    d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z">
-                                </path>
-                                <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"></path>
-                            </svg>
-                        </div>
-                    </div>
+                    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" class="w-full h-full">
+                        <path class="fill-[#0369a1] opacity-50"
+                            d="M0,30 C150,70 350,30 500,70 C650,30 850,70 1000,30 C1150,70 1350,30 1440,70 L1440,100 L0,100 Z" />
+                        <path class="fill-[#024673] opacity-70"
+                            d="M0,60 C150,20 350,60 500,20 C650,60 850,20 1000,60 C1150,20 1350,60 1440,20 L1440,100 L0,100 Z" />
+                    </svg>
                 </div>
             </div>
-        </section>
+        </section>  
 
         <!-- Paket Section -->
         <section class="paket py-16 px-8 lg:px-16 bg-white relative w-full">
@@ -1130,173 +1159,6 @@
         </div>
     </div>
 <script src="./js/main.js"></script>
-<script>
-// AOS Initialization
-if (typeof AOS !== 'undefined') {
-    AOS.init();
-}
 
-// Modal Konsultasi Toggle
-const openModalButtons = document.querySelectorAll('#openConsultationModal, #openConsultationModalBottom');
-const consultationModal = document.getElementById('consultationModal');
-const closeModalButton = document.querySelector('.modal-close');
-
-if (openModalButtons.length > 0 && consultationModal) {
-    openModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            consultationModal.classList.add('active');
-        });
-    });
-}
-
-if (closeModalButton) {
-    closeModalButton.addEventListener('click', closeConsultationModal);
-}
-
-function closeConsultationModal() {
-    if (consultationModal) {
-        consultationModal.classList.remove('active');
-    }
-}
-
-function closeModal() {
-    closeConsultationModal();
-}
-
-// Form validation
-function validateForm() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-
-    // Validasi nama
-    if (!name || name.length < 2) {
-        alert('Nama harus diisi minimal 2 karakter!');
-        return false;
-    }
-
-    // Validasi email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email)) {
-        alert('Email harus diisi dengan format yang benar!');
-        return false;
-    }
-
-    // Validasi phone
-    const phoneDigits = phone.replace(/[^0-9]/g, '');
-    if (!phone || phoneDigits.length < 10) {
-        alert('Nomor telepon harus diisi minimal 10 digit!');
-        return false;
-    }
-
-    // Tampilkan loading
-    const submitButton = document.querySelector('button[type="submit"]');
-    if (submitButton) {
-        submitButton.textContent = 'Mengirim...';
-        submitButton.disabled = true;
-    }
-
-    return true;
-}
-
-
-// Portfolio Filter Logic (jika ada)
-document.addEventListener('DOMContentLoaded', () => {
-    const mainFilterButtons = document.querySelectorAll('.main-filter-btn');
-    const subFilterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    const subcategoryFilters = document.getElementById('subcategory-filters');
-    const websiteProjects = document.getElementById('website-projects');
-    const aplikasiProjects = document.getElementById('aplikasi-projects');
-
-    if (mainFilterButtons.length === 0) return; // Skip jika tidak ada filter
-
-    function filterProjects() {
-        const activeMainFilter = document.querySelector('.main-filter-btn.active')?.getAttribute('data-main-filter') || 'website';
-        const activeSubFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || 'all';
-
-        projectCards.forEach(card => {
-            card.classList.add('hidden');
-        });
-
-        projectCards.forEach(card => {
-            const cardMainCategory = card.dataset.mainCategory;
-            const cardCategory = card.dataset.category;
-
-            if (activeMainFilter === 'website' && cardMainCategory === 'website') {
-                if (activeSubFilter === 'all' || cardCategory === activeSubFilter) {
-                    card.classList.remove('hidden');
-                }
-            } else if (activeMainFilter === 'aplikasi' && cardMainCategory === 'aplikasi') {
-                card.classList.remove('hidden');
-            }
-        });
-
-        if (websiteProjects && aplikasiProjects && subcategoryFilters) {
-            if (activeMainFilter === 'website') {
-                websiteProjects.classList.remove('hidden');
-                aplikasiProjects.classList.add('hidden');
-                subcategoryFilters.classList.remove('hidden');
-            } else if (activeMainFilter === 'aplikasi') {
-                websiteProjects.classList.add('hidden');
-                aplikasiProjects.classList.remove('hidden');
-                subcategoryFilters.classList.add('hidden');
-            }
-        }
-    }
-
-    mainFilterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            mainFilterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            subFilterButtons.forEach(btn => btn.classList.remove('active'));
-            const allProjectBtn = document.querySelector('.filter-btn[data-filter="all"]');
-            if (allProjectBtn) allProjectBtn.classList.add('active');
-
-            filterProjects();
-        });
-    });
-
-    subFilterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            subFilterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            filterProjects();
-        });
-    });
-
-    filterProjects();
-});
-
-// Modal Image Viewer (jika ada)
-function openModal(imageSrc) {
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    if (modal && modalImage) {
-        modalImage.src = imageSrc;
-        modal.classList.remove('hidden');
-    }
-}
-
-const closeImageModal = document.getElementById('closeModal');
-if (closeImageModal) {
-    closeImageModal.addEventListener('click', () => {
-        const imageModal = document.getElementById('imageModal');
-        if (imageModal) {
-            imageModal.classList.add('hidden');
-        }
-    });
-}
-
-const imageModal = document.getElementById('imageModal');
-if (imageModal) {
-    imageModal.addEventListener('click', (e) => {
-        if (e.target === e.currentTarget) {
-            e.currentTarget.classList.add('hidden');
-        }
-    });
-}
-</script>
 </body>
 </html>
