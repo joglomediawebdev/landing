@@ -136,6 +136,13 @@
     align-items: center;
 }
 
+@media (max-width: 767px) {
+
+   .batik-pattern-container {
+            display: none;
+        }
+}
+
         .batik-pattern-container {
             position: absolute;
             top: 120px;
