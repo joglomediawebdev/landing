@@ -14,6 +14,7 @@
     display: none;
     cursor: pointer;
     z-index: 1001;
+    padding: 8px;
 }
 
 .hamburger.active .line:nth-child(1) {
@@ -130,6 +131,7 @@
         background-color: #1e3a8a;
     }
 }
+
 
 /* Ensure navbar content doesn't overlap */
 .navbar .flex {
