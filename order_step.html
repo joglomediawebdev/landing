@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joglo Media Web Development</title>
+    <link rel="icon" href="images/logo-putih2.png" type="image/png" width="100">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+</head>
+
+<body class="font-inter bg-gradient-to-b from-[#c9d6e3] to-[#e8ebf2] text-[#1a1a1a]">
+    
+<header class="navbar fixed top-0 w-full z-[1000] flex items-center justify-between py-4 h-[120px] backdrop-blur-sm px-8" data-aos="fade-down" data-aos-duration="1000">
+    <div class="flex items-center">
+        <div class="logo flex items-start">
+            <img src="images/logo-biru.png" alt="Joglo Media" class="h-[100px]" />
+        </div>
+    </div>
+    <!-- Hamburger Button -->
+    <button class="hamburger md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none z-50">
+        <span class="w-6 h-1 bg-[#024673] mb-1 transition-transform duration-300 line"></span>
+        <span class="w-6 h-1 bg-[#024673] mb-1 transition-opacity duration-300 line"></span>
+        <span class="w-6 h-1 bg-[#024673] transition-transform duration-300 line"></span>
+    </button>
+    <!-- Navigation -->
+    <div class="nav-container hidden md:flex items-center gap-10 z-40">
+        <nav class="nav-links flex items-center gap-10">
+            <a href="index.html" class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors active:font-bold">Beranda</a>
+            <a href="#" class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors">Tentang Kami</a>
+            <a href="#" class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors">Paket</a>
+            <a href="order_step.html" class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors">Cara Pemesanan</a>
+            <a href="#" class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors">Portofolio</a>
+            <a href="testimonials.html" class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors">Testimoni</a>
+            <a href="https://wa.me/6288980472165?text=Halo%2C%20saya%20ingin%20memesan%20produk%20ini"
+                        target="_blank"
+                        class=" border-none py-3 px-5 rounded-full font-normal text-sm cursor-pointer bg-[#024673] text-white hover:bg-[#1e3a8a] hover:scale-105 transition-all duration-200 hidden md:block">
+                        Pesan Sekarang
+                        </a>
+        </nav>
+    </div>
+</header>
+<section class="how-to-order py-16 px-8 lg:px-16 bg-gradient-to-b from-[#c9d6e3] to-[#e8ebf2] text-[#1a1a1a] relative w-full min-h-screen pt-[100px]">
+    <div class="max-w-7xl mx-auto text-center mb-12" data-aos="fade-up" data-aos-duration="800">
+        
+        <div class="mb-8">
+            <img src="images/logo-biru.png" alt="Joglo Media Logo" class="mx-auto h-[200px] mb-4" />
+        </div>
+        <div class="flex justify-center items-center gap-4">
+            <div class="h-px bg-[#334155] w-36"></div>
+            <h2 class="text-[36px] text-[#2C3E50] font-black">CARA PEMESANAN WEBSITE</h2>
+            <div class="h-px bg-[#334155] w-36"></div>
+        </div>
+        <p class="text-lg text-[#374151] max-w-2xl mx-auto mt-4">
+            Ikuti langkah-langkah mudah di bawah ini untuk mendapatkan website impian Anda bersama Joglo Media Web Development.
+        </p>
+    </div>
+    
+    <div class="max-w-4xl mx-auto space-y-12 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.01]" data-aos="fade-right" data-aos-duration="1000">
+            <div class="lg:w-1/3 flex justify-center mb-6 lg:mb-0 lg:pr-8">
+                <div class="w-24 h-24 bg-[#0066CC] rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-md">
+                    1
+                </div>
+            </div>
+            <div class="lg:w-2/3 text-center lg:text-left">
+                <h3 class="text-2xl font-bold text-[#024673] mb-3">Konsultasi Awal & Penentuan Kebutuhan</h3>
+                <p class="text-[#374151] leading-relaxed">
+                    Hubungi kami melalui WhatsApp atau formulir kontak untuk sesi konsultasi gratis. Ceritakan visi Anda, jenis website yang diinginkan (Company Profile, Instansi/Sekolah, E-commerce, atau Custom), dan fitur-fitur yang Anda butuhkan. Tim kami akan membantu Anda memahami opsi terbaik dan menentukan paket yang paling sesuai.
+                </p>
+            </div>
+        </div>
+        
+
+        <div class="flex flex-col lg:flex-row-reverse items-center bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.01]" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <div class="lg:w-1/3 flex justify-center mb-6 lg:mb-0 lg:pl-8">
+                <div class="w-24 h-24 bg-[#0066CC] rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-md">
+                    2
+                </div>
+            </div>
+            <div class="lg:w-2/3 text-center lg:text-right">
+                <h3 class="text-2xl font-bold text-[#024673] mb-3">Penawaran & Persetujuan</h3>
+                <p class="text-[#374151] leading-relaxed">
+                    Berdasarkan konsultasi, kami akan mengirimkan proposal penawaran yang detail, mencakup ruang lingkup proyek, fitur, estimasi biaya, dan jadwal pengerjaan. Setelah Anda setuju dengan proposal tersebut, kita akan menandatangani perjanjian kerja dan Anda dapat melakukan pembayaran uang muka.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.01]" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+            <div class="lg:w-1/3 flex justify-center mb-6 lg:mb-0 lg:pr-8">
+                <div class="w-24 h-24 bg-[#0066CC] rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-md">
+                    3
+                </div>
+            </div>
+            <div class="lg:w-2/3 text-center lg:text-left">
+                <h3 class="text-2xl font-bold text-[#024673] mb-3">Pengumpulan Materi & Desain</h3>
+                <p class="text-[#374151] leading-relaxed">
+                    Kami akan meminta Anda menyediakan materi website seperti logo, teks konten, gambar, video, dan informasi lain yang relevan. Tim UI/UX kami kemudian akan mulai merancang tampilan visual website Anda, dan kami akan meminta persetujuan Anda di setiap tahap desain.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row-reverse items-center bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.01]" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
+            <div class="lg:w-1/3 flex justify-center mb-6 lg:mb-0 lg:pl-8">
+                <div class="w-24 h-24 bg-[#0066CC] rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-md">
+                    4
+                </div>
+            </div>
+            <div class="lg:w-2/3 text-center lg:text-right">
+                <h3 class="text-2xl font-bold text-[#024673] mb-3">Pengembangan & Uji Coba</h3>
+                <p class="text-[#374151] leading-relaxed">
+                    Setelah desain disetujui, pengembang kami akan mulai membangun website Anda, mengimplementasikan semua fitur dan memastikan responsivitas di berbagai perangkat. Kami akan melakukan uji coba menyeluruh untuk memastikan website berfungsi optimal sebelum peluncuran.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.01]" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">
+            <div class="lg:w-1/3 flex justify-center mb-6 lg:mb-0 lg:pr-8">
+                <div class="w-24 h-24 bg-[#0066CC] rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-md">
+                    5
+                </div>
+            </div>
+            <div class="lg:w-2/3 text-center lg:text-left">
+                <h3 class="text-2xl font-bold text-[#024673] mb-3">Peluncuran & Serah Terima</h3>
+                <p class="text-[#374151] leading-relaxed">
+                    Setelah semua tahap selesai dan Anda puas, kami akan meluncurkan website Anda. Kami akan memberikan akses penuh ke admin panel, panduan penggunaan, serta layanan garansi maintenance selama 1 bulan untuk memastikan website Anda berjalan lancar. Selamat, website Anda siap go digital!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute inset-0 z-0 opacity-0 md:opacity-5">
+        <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <pattern id="diagonalLinePattern" patternUnits="userSpaceOnUse" width="20" height="20">
+                <line x1="0" y1="20" x2="20" y2="0" stroke="#024673" stroke-width="0.5" />
+                <line x1="0" y1="0" x2="0" y2="20" stroke="#024673" stroke-width="0.5" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#diagonalLinePattern)" />
+        </svg>
+    </div>
+</section>
+
+<style>
+    /* Custom styles for how-to-order page if necessary */
+    .how-to-order .bg-white {
+        background-color: white;
+    }
+
+    a, button, [role="button"], .cursor-pointer {
+    cursor: pointer;
+}
+
+/* Optional: Add a subtle active state for buttons/links */
+a:active, button:active {
+    transform: scale(0.98);
+}
+
+/* Ensure the navbar links are visible on desktop regardless of mobile JS state */
+@media (min-width: 768px) { /* Corresponds to Tailwind's 'md' breakpoint */
+    .nav-container {
+        display: flex !important; /* Use !important to override inline 'display: none' from JS */
+        /* Also ensure the mobile-specific transform/opacity are reset if you have them */
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+    }
+    .hamburger {
+        display: none !important; /* Hide hamburger on desktop */
+    }
+}
+</style>
+
+ <script src="js/main.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navContainer = document.querySelector('.nav-container');
+
+    if (hamburger && navContainer) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            if (navContainer.classList.contains('active')) {
+                navContainer.classList.remove('active');
+                navContainer.classList.add('inactive');
+                setTimeout(() => {
+                    navContainer.classList.remove('inactive');
+                    // Only hide for small screens when explicitly closed via hamburger
+                    if (window.innerWidth < 768) { // Tailwind's 'md' breakpoint is 768px
+                        navContainer.style.display = 'none';
+                    }
+                }, 300); // Match animation duration
+            } else {
+                navContainer.style.display = 'flex'; // Always set to flex when opening
+                setTimeout(() => navContainer.classList.add('active'), 10); // Slight delay for animation trigger
+            }
+        });
+
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Only close menu on link click if it's currently active (i.e., on mobile)
+                if (window.innerWidth < 768) {
+                    navContainer.classList.remove('active');
+                    navContainer.classList.add('inactive');
+                    setTimeout(() => {
+                        navContainer.classList.remove('inactive');
+                        navContainer.style.display = 'none';
+                        hamburger.classList.remove('active');
+                    }, 300); // Match animation duration
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!hamburger.contains(event.target) && !navContainer.contains(event.target) && navContainer.classList.contains('active')) {
+                // Only close menu on outside click if it's currently active (i.e., on mobile)
+                if (window.innerWidth < 768) {
+                    navContainer.classList.remove('active');
+                    navContainer.classList.add('inactive');
+                    setTimeout(() => {
+                        navContainer.classList.remove('inactive');
+                        navContainer.style.display = 'none';
+                        hamburger.classList.remove('active');
+                    }, 300); // Match animation duration
+                }
+            }
+        });
+
+        // Add a resize listener to handle transitions between mobile and desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // If desktop
+                navContainer.style.display = ''; // Remove inline style to let Tailwind take over
+                navContainer.classList.remove('active', 'inactive'); // Remove mobile-specific classes
+                hamburger.classList.remove('active'); // Ensure hamburger is not active on desktop
+            } else { // If mobile
+                // If it's currently hidden on mobile due to inline style, re-hide it
+                if (!navContainer.classList.contains('active') && !navContainer.classList.contains('inactive')) {
+                     navContainer.style.display = 'none';
+                }
+            }
+        });
+
+        // Initialize state on load based on screen size
+        if (window.innerWidth < 768) {
+            navContainer.style.display = 'none';
+        } else {
+            navContainer.style.display = 'flex'; // Ensure it's visible on desktop initially
+        }
+    }
+});
+    </script>
+</body>
+
+</html>
