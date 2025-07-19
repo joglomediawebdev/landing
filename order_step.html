@@ -177,83 +177,61 @@ a:active, button:active {
 </style>
 
  <script src="js/main.js"></script>
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navContainer = document.querySelector('.nav-container');
+ <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navContainer = document.querySelector(".nav-container");
 
-    if (hamburger && navContainer) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            if (navContainer.classList.contains('active')) {
-                navContainer.classList.remove('active');
-                navContainer.classList.add('inactive');
-                setTimeout(() => {
-                    navContainer.classList.remove('inactive');
-                    // Only hide for small screens when explicitly closed via hamburger
-                    if (window.innerWidth < 768) { // Tailwind's 'md' breakpoint is 768px
-                        navContainer.style.display = 'none';
-                    }
-                }, 300); // Match animation duration
+        if (hamburger && navContainer) {
+          hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            if (navContainer.classList.contains("active")) {
+              navContainer.classList.remove("active");
+              navContainer.classList.add("inactive");
+              setTimeout(() => {
+                navContainer.classList.remove("inactive");
+                if (window.innerWidth < 768) {
+                  navContainer.style.display = "none";
+                }
+              }, 300);
             } else {
-                navContainer.style.display = 'flex'; // Always set to flex when opening
-                setTimeout(() => navContainer.classList.add('active'), 10); // Slight delay for animation trigger
+              navContainer.style.display = "flex";
+              setTimeout(() => navContainer.classList.add("active"), 10);
             }
-        });
+          });
 
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Only close menu on link click if it's currently active (i.e., on mobile)
-                if (window.innerWidth < 768) {
-                    navContainer.classList.remove('active');
-                    navContainer.classList.add('inactive');
-                    setTimeout(() => {
-                        navContainer.classList.remove('inactive');
-                        navContainer.style.display = 'none';
-                        hamburger.classList.remove('active');
-                    }, 300); // Match animation duration
-                }
+          const navLinks = document.querySelectorAll(".nav-links a");
+          navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+              if (window.innerWidth < 768) {
+                navContainer.classList.remove("active");
+                navContainer.classList.add("inactive");
+                setTimeout(() => {
+                  navContainer.classList.remove("inactive");
+                  navContainer.style.display = "none";
+                  hamburger.classList.remove("active");
+                }, 300);
+              }
             });
-        });
+          });
 
-        document.addEventListener('click', (event) => {
-            if (!hamburger.contains(event.target) && !navContainer.contains(event.target) && navContainer.classList.contains('active')) {
-                // Only close menu on outside click if it's currently active (i.e., on mobile)
-                if (window.innerWidth < 768) {
-                    navContainer.classList.remove('active');
-                    navContainer.classList.add('inactive');
-                    setTimeout(() => {
-                        navContainer.classList.remove('inactive');
-                        navContainer.style.display = 'none';
-                        hamburger.classList.remove('active');
-                    }, 300); // Match animation duration
-                }
+          document.addEventListener("click", (event) => {
+            if (
+              !hamburger.contains(event.target) &&
+              !navContainer.contains(event.target) &&
+              navContainer.classList.contains("active")
+            ) {
+              navContainer.classList.remove("active");
+              navContainer.classList.add("inactive");
+              setTimeout(() => {
+                navContainer.classList.remove("inactive");
+                navContainer.style.display = "none";
+                hamburger.classList.remove("active");
+              }, 300); // Match animation duration
             }
-        });
-
-        // Add a resize listener to handle transitions between mobile and desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) { // If desktop
-                navContainer.style.display = ''; // Remove inline style to let Tailwind take over
-                navContainer.classList.remove('active', 'inactive'); // Remove mobile-specific classes
-                hamburger.classList.remove('active'); // Ensure hamburger is not active on desktop
-            } else { // If mobile
-                // If it's currently hidden on mobile due to inline style, re-hide it
-                if (!navContainer.classList.contains('active') && !navContainer.classList.contains('inactive')) {
-                     navContainer.style.display = 'none';
-                }
-            }
-        });
-
-        // Initialize state on load based on screen size
-        if (window.innerWidth < 768) {
-            navContainer.style.display = 'none';
-        } else {
-            navContainer.style.display = 'flex'; // Ensure it's visible on desktop initially
+          });
         }
-    }
-});
+      });
     </script>
 </body>
 

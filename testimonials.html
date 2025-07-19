@@ -1,267 +1,535 @@
 <!DOCTYPE html>
 <html lang="id">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joglo Media Web Development</title>
-    <link rel="icon" href="images/logo-putih2.png" type="image/png" width="100">
+    <link
+      rel="icon"
+      href="images/logo-putih2.png"
+      type="image/png"
+      width="100"
+    />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- AOS Library for Scroll Animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="css/home.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
 
+  <body
+    class="font-inter bg-gradient-to-b from-[#c9d6e3] to-[#e8ebf2] text-[#1a1a1a]"
+  >
+    <header
+      class="navbar fixed top-0 w-full z-[1000] flex items-center justify-between py-4 h-[120px] backdrop-blur-sm px-8"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+    >
+      <div class="flex items-center">
+        <div class="logo flex items-start">
+          <img src="images/logo-biru.png" alt="Joglo Media" class="h-[100px]" />
+        </div>
+      </div>
+      <!-- Hamburger Button -->
+      <button
+        class="hamburger md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none z-50"
+      >
+        <span
+          class="w-6 h-1 bg-[#024673] mb-1 transition-transform duration-300 line"
+        ></span>
+        <span
+          class="w-6 h-1 bg-[#024673] mb-1 transition-opacity duration-300 line"
+        ></span>
+        <span
+          class="w-6 h-1 bg-[#024673] transition-transform duration-300 line"
+        ></span>
+      </button>
+      <!-- Navigation -->
+      <div class="nav-container hidden md:flex items-center gap-10 z-40">
+        <nav class="nav-links flex items-center gap-10">
+          <a
+            href="index.html"
+            class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors active:font-bold"
+            >Beranda</a
+          >
+          <a
+            href="#"
+            class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors"
+            >Tentang Kami</a
+          >
+          <a
+            href="#"
+            class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors"
+            >Paket</a
+          >
+          <a
+            href="order_step.html"
+            class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors"
+            >Cara Pemesanan</a
+          >
+          <a
+            href="#"
+            class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors"
+            >Portofolio</a
+          >
+          <a
+            href="testimonials.html"
+            class="text-[#024673] font-medium text-sm hover:text-[#1e3a8a] transition-colors"
+            >Testimoni</a
+          >
+          <a
+            href="https://wa.me/6288980472165?text=Halo%2C%20saya%20ingin%20memesan%20produk%20ini"
+            target="_blank"
+            class="border-none py-3 px-5 rounded-full font-normal text-sm cursor-pointer bg-[#024673] text-white hover:bg-[#1e3a8a] hover:scale-105 transition-all duration-200 hidden md:block"
+          >
+            Pesan Sekarang
+          </a>
+        </nav>
+      </div>
+    </header>
 
-</head>
-
-<body class="font-inter bg-gradient-to-b from-[#c9d6e3] to-[#e8ebf2] text-[#1a1a1a]">
-
-
-<section id="testimoni" class="testimoni py-16 px-8 lg:px-16 bg-gradient-to-b from-[#e8ebf2] to-[#c9d6e3] text-[#1a1a1a] relative w-full overflow-hidden">
-    <div class="absolute inset-0 z-0 opacity-5"> {{-- Sesuaikan opacity sesuai selera --}}
-        <svg width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <pattern id="parangPatternTestimonial" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
-                <path d="M0 20 L10 0 L20 20 L30 0 L40 20" stroke="#024673" stroke-width="1.5" fill="none" />
-                <path d="M0 30 L10 10 L20 30 L30 10 L40 30" stroke="#024673" stroke-width="1.5" fill="none" />
-                <circle cx="10" cy="10" r="2" fill="#024673" />
-                <circle cx="30" cy="10" r="2" fill="#024673" />
-                <circle cx="10" cy="30" r="2" fill="#024673" />
-                <circle cx="30" cy="30" r="2" fill="#024673" />
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#parangPatternTestimonial)" />
+    <section
+      id="testimoni"
+      class="testimoni py-16 px-8 lg:px-16 bg-gradient-to-b from-[#e8ebf2] to-[#c9d6e3] text-[#1a1a1a] relative w-full overflow-hidden mt-5"
+    >
+    <div class="mb-8">
+            <img src="images/logo-biru.png" alt="Joglo Media Logo" class="mx-auto h-[200px] mb-4" />
+        </div>
+      <div class="absolute inset-0 z-0 opacity-5">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <pattern
+            id="parangPatternTestimonial"
+            patternUnits="userSpaceOnUse"
+            width="40"
+            height="40"
+            patternTransform="rotate(45)"
+          >
+            <path
+              d="M0 20 L10 0 L20 20 L30 0 L40 20"
+              stroke="#024673"
+              stroke-width="1.5"
+              fill="none"
+            />
+            <path
+              d="M0 30 L10 10 L20 30 L30 10 L40 30"
+              stroke="#024673"
+              stroke-width="1.5"
+              fill="none"
+            />
+            <circle cx="10" cy="10" r="2" fill="#024673" />
+            <circle cx="30" cy="10" r="2" fill="#024673" />
+            <circle cx="10" cy="30" r="2" fill="#024673" />
+            <circle cx="30" cy="30" r="2" fill="#024673" />
+          </pattern>
+          <rect
+            width="100%"
+            height="100%"
+            fill="url(#parangPatternTestimonial)"
+          />
         </svg>
-    </div>
-    <div class="mt-4 mb-8 ml-6">
-    <a href="{{ route('home') }}" class="inline-flex items-center px-6 py-3 bg-[#024673] text-white rounded-full font-semibold text-sm hover:bg-[#1e3a8a] transition-all duration-300 transform hover:scale-105 shadow-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-        Kembali ke Beranda
-    </a>
-</div>
+      </div>
+      <div class="mt-4 mb-8 ml-6">
+        
+      </div>
 
-    <div class="max-w-7xl mx-auto text-center mb-12" data-aos="fade-up" data-aos-duration="800">
+      <div
+        class="max-w-7xl mx-auto text-center mb-12"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
         <div class="flex justify-center items-center gap-4">
-            <div class="h-px bg-[#334155] w-36"></div>
-            <h2 class="text-[36px] text-[#2C3E50] font-black">APA KATA PELANGGAN KAMI</h2>
-            <div class="h-px bg-[#334155] w-36"></div>
+          <div class="h-px bg-[#334155] w-36"></div>
+          <h2 class="text-[36px] text-[#2C3E50] font-black">
+            APA KATA PELANGGAN KAMI
+          </h2>
+          <div class="h-px bg-[#334155] w-36"></div>
         </div>
         <p class="text-lg text-[#374151] max-w-2xl mx-auto mt-4">
-            Dengar langsung pengalaman mereka yang telah bertransformasi digital bersama Joglo Media Web Development.
+          Dengar langsung pengalaman mereka yang telah bertransformasi digital
+          bersama Joglo Media Web Development.
         </p>
-    </div>
+      </div>
 
-    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="max-w-7xl mx-auto relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="{{ asset('images/avatar-1.png') }}"
+              alt="Foto Pelanggan 1"
+              class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]"
+            />
+            <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Budi Santoso</h3>
+            <p class="text-sm text-gray-500 mb-3">Pemilik UMKM "Kopi Nikmat"</p>
+            <div class="flex items-center justify-center text-yellow-400 mb-4">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </div>
+            <p class="text-base text-[#374151] leading-relaxed italic">
+              "Website dari Joglo Media benar-benar mengangkat bisnis saya!
+              Desainnya modern, responsif, dan mudah digunakan. Pelayanan
+              support-nya juga sangat cepat tanggap. Sangat direkomendasikan!"
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="{{ asset('images/avatar-1.png') }}"
+              alt="Foto Pelanggan 1"
+              class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]"
+            />
+            <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Budi Santoso</h3>
+            <p class="text-sm text-gray-500 mb-3">Pemilik UMKM "Kopi Nikmat"</p>
+            <div class="flex items-center justify-center text-yellow-400 mb-4">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </div>
+            <p class="text-base text-[#374151] leading-relaxed italic">
+              "Website dari Joglo Media benar-benar mengangkat bisnis saya!
+              Desainnya modern, responsif, dan mudah digunakan. Pelayanan
+              support-nya juga sangat cepat tanggap. Sangat direkomendasikan!"
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="{{ asset('images/avatar-1.png') }}"
+              alt="Foto Pelanggan 1"
+              class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]"
+            />
+            <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Budi Santoso</h3>
+            <p class="text-sm text-gray-500 mb-3">Pemilik UMKM "Kopi Nikmat"</p>
+            <div class="flex items-center justify-center text-yellow-400 mb-4">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </div>
+            <p class="text-base text-[#374151] leading-relaxed italic">
+              "Website dari Joglo Media benar-benar mengangkat bisnis saya!
+              Desainnya modern, responsif, dan mudah digunakan. Pelayanan
+              support-nya juga sangat cepat tanggap. Sangat direkomendasikan!"
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="{{ asset('images/avatar-1.png') }}"
+              alt="Foto Pelanggan 1"
+              class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]"
+            />
+            <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Budi Santoso</h3>
+            <p class="text-sm text-gray-500 mb-3">Pemilik UMKM "Kopi Nikmat"</p>
+            <div class="flex items-center justify-center text-yellow-400 mb-4">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </div>
+            <p class="text-base text-[#374151] leading-relaxed italic">
+              "Website dari Joglo Media benar-benar mengangkat bisnis saya!
+              Desainnya modern, responsif, dan mudah digunakan. Pelayanan
+              support-nya juga sangat cepat tanggap. Sangat direkomendasikan!"
+            </p>
+          </div>
 
-            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('images/avatar-1.png') }}" alt="Foto Pelanggan 1" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]">
-                <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Budi Santoso</h3>
-                <p class="text-sm text-gray-500 mb-3">Pemilik UMKM "Kopi Nikmat"</p>
-                <div class="flex items-center justify-center text-yellow-400 mb-4">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-                <p class="text-base text-[#374151] leading-relaxed italic">
-                    "Website dari Joglo Media benar-benar mengangkat bisnis saya! Desainnya modern, responsif, dan mudah digunakan. Pelayanan support-nya juga sangat cepat tanggap. Sangat direkomendasikan!"
-                </p>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="{{ asset('images/avatar-2.png') }}"
+              alt="Foto Pelanggan 2"
+              class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]"
+            />
+            <h3 class="text-xl font-bold text-[#2C3E50] mb-1">
+              Dr. Siti Aminah
+            </h3>
+            <p class="text-sm text-gray-500 mb-3">
+              Kepala Sekolah SD Harapan Bangsa
+            </p>
+            <div class="flex items-center justify-center text-yellow-400 mb-4">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('images/avatar-1.png') }}" alt="Foto Pelanggan 1" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]">
-                <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Budi Santoso</h3>
-                <p class="text-sm text-gray-500 mb-3">Pemilik UMKM "Kopi Nikmat"</p>
-                <div class="flex items-center justify-center text-yellow-400 mb-4">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-                <p class="text-base text-[#374151] leading-relaxed italic">
-                    "Website dari Joglo Media benar-benar mengangkat bisnis saya! Desainnya modern, responsif, dan mudah digunakan. Pelayanan support-nya juga sangat cepat tanggap. Sangat direkomendasikan!"
-                </p>
-            </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('images/avatar-1.png') }}" alt="Foto Pelanggan 1" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]">
-                <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Budi Santoso</h3>
-                <p class="text-sm text-gray-500 mb-3">Pemilik UMKM "Kopi Nikmat"</p>
-                <div class="flex items-center justify-center text-yellow-400 mb-4">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-                <p class="text-base text-[#374151] leading-relaxed italic">
-                    "Website dari Joglo Media benar-benar mengangkat bisnis saya! Desainnya modern, responsif, dan mudah digunakan. Pelayanan support-nya juga sangat cepat tanggap. Sangat direkomendasikan!"
-                </p>
-            </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('images/avatar-1.png') }}" alt="Foto Pelanggan 1" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]">
-                <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Budi Santoso</h3>
-                <p class="text-sm text-gray-500 mb-3">Pemilik UMKM "Kopi Nikmat"</p>
-                <div class="flex items-center justify-center text-yellow-400 mb-4">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-                <p class="text-base text-[#374151] leading-relaxed italic">
-                    "Website dari Joglo Media benar-benar mengangkat bisnis saya! Desainnya modern, responsif, dan mudah digunakan. Pelayanan support-nya juga sangat cepat tanggap. Sangat direkomendasikan!"
-                </p>
-            </div>
+            <p class="text-base text-[#374151] leading-relaxed italic">
+              "Website sekolah kami sekarang terlihat sangat profesional dan
+              mudah diakses oleh orang tua serta siswa. Fitur-fitur yang
+              disesuaikan sangat membantu dalam komunikasi. Terima kasih Joglo
+              Media!"
+            </p>
+          </div>
 
-            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-                <img src="{{ asset('images/avatar-2.png') }}" alt="Foto Pelanggan 2" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]">
-                <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Dr. Siti Aminah</h3>
-                <p class="text-sm text-gray-500 mb-3">Kepala Sekolah SD Harapan Bangsa</p>
-                <div class="flex items-center justify-center text-yellow-400 mb-4">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-                <p class="text-base text-[#374151] leading-relaxed italic">
-                    "Website sekolah kami sekarang terlihat sangat profesional dan mudah diakses oleh orang tua serta siswa. Fitur-fitur yang disesuaikan sangat membantu dalam komunikasi. Terima kasih Joglo Media!"
-                </p>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <img
+              src="{{ asset('images/avatar-3.png') }}"
+              alt="Foto Pelanggan 3"
+              class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]"
+            />
+            <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Risa Lestari</h3>
+            <p class="text-sm text-gray-500 mb-3">Content Creator & Blogger</p>
+            <div class="flex items-center justify-center text-yellow-400 mb-4">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
             </div>
-
-            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="300">
-                <img src="{{ asset('images/avatar-3.png') }}" alt="Foto Pelanggan 3" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#024673]">
-                <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Risa Lestari</h3>
-                <p class="text-sm text-gray-500 mb-3">Content Creator & Blogger</p>
-                <div class="flex items-center justify-center text-yellow-400 mb-4">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-                <p class="text-base text-[#374151] leading-relaxed italic">
-                    "Saya butuh blog yang cepat dan *eyecatching*, dan Joglo Media berhasil mewujudkannya. Tampilan blog saya sekarang sangat keren dan mudah dikelola. Kualitas kerjanya sangat memuaskan!"
-                </p>
-            </div>
-
+            <p class="text-base text-[#374151] leading-relaxed italic">
+              "Saya butuh blog yang cepat dan *eyecatching*, dan Joglo Media
+              berhasil mewujudkannya. Tampilan blog saya sekarang sangat keren
+              dan mudah dikelola. Kualitas kerjanya sangat memuaskan!"
+            </p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-<style>
-    /* Custom styles for how-to-order page if necessary */
-    .how-to-order .bg-white {
+    <style>
+      /* Custom styles for how-to-order page if necessary */
+      .how-to-order .bg-white {
         background-color: white;
-    }
+      }
 
-    a, button, [role="button"], .cursor-pointer {
-    cursor: pointer;
-}
+      a,
+      button,
+      [role="button"],
+      .cursor-pointer {
+        cursor: pointer;
+      }
 
-/* Optional: Add a subtle active state for buttons/links */
-a:active, button:active {
-    transform: scale(0.98);
-}
+      /* Optional: Add a subtle active state for buttons/links */
+      a:active,
+      button:active {
+        transform: scale(0.98);
+      }
 
-/* Ensure the navbar links are visible on desktop regardless of mobile JS state */
-@media (min-width: 768px) { /* Corresponds to Tailwind's 'md' breakpoint */
-    .nav-container {
-        display: flex !important; /* Use !important to override inline 'display: none' from JS */
-        /* Also ensure the mobile-specific transform/opacity are reset if you have them */
-        transform: translateX(0) !important;
-        opacity: 1 !important;
-    }
-    .hamburger {
-        display: none !important; /* Hide hamburger on desktop */
-    }
-}
-</style>
-
- <script src="js/main.js"></script>
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navContainer = document.querySelector('.nav-container');
-
-    if (hamburger && navContainer) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            if (navContainer.classList.contains('active')) {
-                navContainer.classList.remove('active');
-                navContainer.classList.add('inactive');
-                setTimeout(() => {
-                    navContainer.classList.remove('inactive');
-                    // Only hide for small screens when explicitly closed via hamburger
-                    if (window.innerWidth < 768) { // Tailwind's 'md' breakpoint is 768px
-                        navContainer.style.display = 'none';
-                    }
-                }, 300); // Match animation duration
-            } else {
-                navContainer.style.display = 'flex'; // Always set to flex when opening
-                setTimeout(() => navContainer.classList.add('active'), 10); // Slight delay for animation trigger
-            }
-        });
-
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Only close menu on link click if it's currently active (i.e., on mobile)
-                if (window.innerWidth < 768) {
-                    navContainer.classList.remove('active');
-                    navContainer.classList.add('inactive');
-                    setTimeout(() => {
-                        navContainer.classList.remove('inactive');
-                        navContainer.style.display = 'none';
-                        hamburger.classList.remove('active');
-                    }, 300); // Match animation duration
-                }
-            });
-        });
-
-        document.addEventListener('click', (event) => {
-            if (!hamburger.contains(event.target) && !navContainer.contains(event.target) && navContainer.classList.contains('active')) {
-                // Only close menu on outside click if it's currently active (i.e., on mobile)
-                if (window.innerWidth < 768) {
-                    navContainer.classList.remove('active');
-                    navContainer.classList.add('inactive');
-                    setTimeout(() => {
-                        navContainer.classList.remove('inactive');
-                        navContainer.style.display = 'none';
-                        hamburger.classList.remove('active');
-                    }, 300); // Match animation duration
-                }
-            }
-        });
-
-        // Add a resize listener to handle transitions between mobile and desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) { // If desktop
-                navContainer.style.display = ''; // Remove inline style to let Tailwind take over
-                navContainer.classList.remove('active', 'inactive'); // Remove mobile-specific classes
-                hamburger.classList.remove('active'); // Ensure hamburger is not active on desktop
-            } else { // If mobile
-                // If it's currently hidden on mobile due to inline style, re-hide it
-                if (!navContainer.classList.contains('active') && !navContainer.classList.contains('inactive')) {
-                     navContainer.style.display = 'none';
-                }
-            }
-        });
-
-        // Initialize state on load based on screen size
-        if (window.innerWidth < 768) {
-            navContainer.style.display = 'none';
-        } else {
-            navContainer.style.display = 'flex'; // Ensure it's visible on desktop initially
+      /* Ensure the navbar links are visible on desktop regardless of mobile JS state */
+      @media (min-width: 768px) {
+        /* Corresponds to Tailwind's 'md' breakpoint */
+        .nav-container {
+          display: flex !important; /* Use !important to override inline 'display: none' from JS */
+          /* Also ensure the mobile-specific transform/opacity are reset if you have them */
+          transform: translateX(0) !important;
+          opacity: 1 !important;
         }
-    }
-});
-    </script>
-</body>
+        .hamburger {
+          display: none !important; /* Hide hamburger on desktop */
+        }
+      }
+    </style>
 
+    <script src="js/main.js"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navContainer = document.querySelector(".nav-container");
+
+        if (hamburger && navContainer) {
+          hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            if (navContainer.classList.contains("active")) {
+              navContainer.classList.remove("active");
+              navContainer.classList.add("inactive");
+              setTimeout(() => {
+                navContainer.classList.remove("inactive");
+                if (window.innerWidth < 768) {
+                  navContainer.style.display = "none";
+                }
+              }, 300);
+            } else {
+              navContainer.style.display = "flex";
+              setTimeout(() => navContainer.classList.add("active"), 10);
+            }
+          });
+
+          const navLinks = document.querySelectorAll(".nav-links a");
+          navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+              if (window.innerWidth < 768) {
+                navContainer.classList.remove("active");
+                navContainer.classList.add("inactive");
+                setTimeout(() => {
+                  navContainer.classList.remove("inactive");
+                  navContainer.style.display = "none";
+                  hamburger.classList.remove("active");
+                }, 300);
+              }
+            });
+          });
+
+          document.addEventListener("click", (event) => {
+            if (
+              !hamburger.contains(event.target) &&
+              !navContainer.contains(event.target) &&
+              navContainer.classList.contains("active")
+            ) {
+              navContainer.classList.remove("active");
+              navContainer.classList.add("inactive");
+              setTimeout(() => {
+                navContainer.classList.remove("inactive");
+                navContainer.style.display = "none";
+                hamburger.classList.remove("active");
+              }, 300); // Match animation duration
+            }
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
